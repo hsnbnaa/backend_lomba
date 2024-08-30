@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from typing import Optional, List
 import mysql.connector
 from starlette.middleware.cors import CORSMiddleware
-import logging
 
 app = FastAPI()
 
@@ -304,6 +303,6 @@ async def get_nilai(user_name: str):
     
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="127.0.0.1", port=8000)
