@@ -39,10 +39,10 @@ class Login(BaseModel):
 # Koneksi ke database MySQL
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
+        host="mysql.railway.internal",
         user="root",
-        password="",
-        database="sekolah"
+        password="kAwvWxwTYmRstDPknVKxDahUBgeyClbm",
+        database="railway"
     )
 
 @app.get("/")
