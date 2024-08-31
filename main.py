@@ -301,6 +301,14 @@ async def get_nilai(user_name: str):
     except mysql.connector.Error as err:
         raise HTTPException(status_code=500, detail=str(err))
     
+class get_nilai(BaseModel):
+    ulangan_1: float
+    ulangan_2: float
+    uts: float
+    ulangan_3: float
+    ulangan_4: float
+    uas: float
+    
 @app.get("/get_nilai/{username}", response_model=List[get_nilai])
 async def get_nilai(username: str):
     try:
