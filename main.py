@@ -248,9 +248,9 @@ async def get_token(token_code: str):
         raise HTTPException(status_code=500, detail=str(err))
     
 class Nilai(BaseModel):
-    matematika: Optional[float] = None
-    fisika: Optional[float] = None
-    kimia: Optional[float] = None
+    matematika: Optional[str] = None
+    fisika: Optional[str] = None
+    kimia: Optional[str] = None
 
 @app.get("/nilai/{user_name}", response_model=List[Nilai])
 async def get_nilai(user_name: str):
