@@ -40,7 +40,7 @@ def get_db_connection():
     return mysql.connector.connect(
         host="mysql.railway.internal",
         user="root",
-        password="kAwvWxwTYmRstDPknVKxDahUBgeyClbm",
+        password="cMjJQdaKiDlyZtONPCQJiBVmMEornuae",
         database="railway"
     )
 
