@@ -301,7 +301,25 @@ async def get_nilai(user_name: str):
     except mysql.connector.Error as err:
         raise HTTPException(status_code=500, detail=str(err))
     
+@app.get("/get_nilai/{username}", response_model=List[get_nilai])
+async def get_nilai(username: str):
+    try:
+        db = get_db_connection()
+        cursor = db.cursor()
 
+        cursor.execute("SELECT * FROM nilai WHERE fullname = %s", (username,))
+
+        columns = [column[0] for column in cursor.description]
+
+        nilai = cursor.fetchall()
+        result = [dict(zip(columns, row)) for row in nilai]
+
+        cursor.close()
+        db.close()
+        
+        return result
+    except mysql.connector.Error as err:
+        raise HTTPException(status_code=500, detail=str(err))
 
 # if __name__ == "__main__":
 #     import uvicorn
