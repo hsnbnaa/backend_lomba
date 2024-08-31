@@ -8,7 +8,7 @@ app = FastAPI()
 
 # Konfigurasi CORS
 orig_origins = [
-    "http://127.0.0.1:5500",  # Ganti dengan asal yang sesuai
+    "https://backendlomba-production.up.railway.app",  # Ganti dengan asal yang sesuai
 ]
 
 app.add_middleware(
