@@ -280,7 +280,7 @@ async def get_nilai(user_name: str):
 
                 cursor.execute(f"""
                     UPDATE nilai
-                    SET matematika = %s
+                    SET fisika = %s
                     WHERE fullname = %s
                 """, (result[0][1], user_name))
                 db.commit()
