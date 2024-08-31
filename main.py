@@ -315,7 +315,7 @@ async def get_nilai(username: str):
         db = get_db_connection()
         cursor = db.cursor()
 
-        cursor.execute("SELECT * FROM nilai WHERE fullname = %s", (username,))
+        cursor.execute("SELECT * FROM fisika WHERE fullname = %s", (username,))
 
         columns = [column[0] for column in cursor.description]
 
